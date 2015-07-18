@@ -1,0 +1,52 @@
+/* Layout Page Styling */
+header {
+    margin-bottom: 50px;
+}
+
+.navbar-collapse {
+    width: 200px;
+}
+
+.header-action-buttons {
+    position: relative;
+    top: 8px;
+    bottom: 10px;
+}
+
+.glyphicon {
+    position: relative;
+    top: 3px;
+}
+
+footer {
+    height: 25px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background:rgba(0,0,0,0.75);
+    text-align: center;
+    padding: 5px;
+}
+
+footer p {
+    color: #FFFFFF;
+}
+/* End Layout Page Styling */
+
+/* Home Page Styling */
+.jumbotron {
+    text-align: center;
+}
+
+.sign-in-links {
+    position: relative;
+    display: inline-block;
+}
+
+.sign-in-links a {
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+/* End Home Page Styling */
