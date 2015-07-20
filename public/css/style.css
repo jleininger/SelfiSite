@@ -50,3 +50,9 @@ footer p {
     margin-left: 2px;
 }
 /* End Home Page Styling */
+
+/* Sign Up Page Styling */
+.modal-content {
+    padding: 10px;
+}
+/* End Sign Up Page Styling */
