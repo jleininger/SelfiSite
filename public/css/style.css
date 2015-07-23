@@ -3,8 +3,12 @@ header {
     margin-bottom: 50px;
 }
 
+a {
+    cursor: pointer;
+}
+
 .navbar-collapse {
-    width: 200px;
+    width: 500px;
 }
 
 .header-action-buttons {
@@ -16,6 +20,10 @@ header {
 .glyphicon {
     position: relative;
     top: 3px;
+}
+
+.header-action-buttons a {
+    color: #FFFFFF;
 }
 
 footer {
@@ -41,11 +49,13 @@ footer p {
 .sign-in-links {
     position: relative;
     display: inline-block;
+    top: 8px;
 }
 
 .sign-in-links a {
     color: #FFFFFF;
     cursor: pointer;
+    font-weight: 700;
     margin-right: 2px;
     margin-left: 2px;
 }
@@ -56,3 +66,46 @@ footer p {
     padding: 10px;
 }
 /* End Sign Up Page Styling */
+
+/* Sign Profile Styling */
+.page-header h1 {
+    font-size: 4em;
+}
+
+.page-header small {
+    font-size: 0.3em;
+    margin-left: 1%;
+}
+
+.form-inline {
+    display: inline-block;
+}
+
+.delete-form {
+    position: relative;
+    right: 0;
+    float: right;
+}
+
+.cancel-btn {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    float: right;
+    width: 100px;
+}
+
+.image-edit-input {
+    width: 100%;
+    margin: 2px 0 2px 0;
+}
+
+.image-edit-textarea {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#imageEdit {
+    display: none;
+}
+/* End Profile Page Styling */

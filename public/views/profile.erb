@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="page-header">
+        <h1><%= @username %><small><%= @name %></small></h1>
+        <a href=<%="mailto:" + @email %></a>	&#8213; <%= @email %></a>
+    </div>
+    
+    <div class="row">
+        <% @images.each do |image| %>
+            <div id="imageView" class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src=<%= "/uploads/#{image['path']}" %> alt="Oops. Look like we can't find this image.">
+                  <div class="caption">
+                    <h2 id="imageName"><%= "#{image['name']}" %></h2>
+                    <% if image['desc'] != nil %>
+                        <p id="imageDesc"><%= "#{image['desc']}" %></p>
+                    <% else %>
+                        <p id="imageDesc">No image description provided.</p>
+                    <% end %>
+                    <a href=<%= "/uploads/#{image['path']}" %> class="btn btn-primary" role="button">Open</a>
+                    <% if @user == @username %>
+                        <button id="editBtn" class="btn btn-default">Edit</button>
+                    <% end %>
+                    <form class="form-inline delete-form" method="POST" action=<%="/delete/#{image['path']}"%>>
+                        <input type="hidden" name="username" value=<%= @username %> />
+                        <% if @user == @username %>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        <% end %>
+                    </form>
+                  </div>
+                </div>
+            </div>
+            <div id="imageEdit" class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src=<%= "/uploads/#{image['path']}" %> alt="Oops. Look like we can't find this image.">
+                  <div class="caption">
+                      <form method="POST" action="/edit/image">
+                        <input type="hidden" name="username" value=<%= @username %> />
+                        <input type="hidden" name="image_path" value=<%=image['path']%> />
+                        <input class='image-edit-input' type='text' name='new_name' value=<%= "#{image['name'].to_s}" %> />
+                        <textarea class='image-edit-textarea' name='new_desc'><%= image['desc'] %></textarea>
+                        <button type="submit" id="editBtn" class="btn btn-success">Save</button>
+                        <a role="button" href=<%="/#{@user}"%> class="btn btn-danger cancel-btn">Cancel</a>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+</div>
